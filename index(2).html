@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haziq</title>
+
+    <link class="w3-card" rel="icon" type="image/png" sizes="512x512"
+          href="images/manchesterunited.png">
+
+    <!-- Fetching W3.CSS from W3Schools to style the search elements -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | IMD318 Resume Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1> <b>Personal Information</b> </h1>
+        <p class="text-italic">Information about myself</p>
+        <div id="clock-widget">Loading Clock...</div>
+
+        <!-- ==================== SEARCH ENGINE ELEMENTS (W3SCHOOLS) ==================== -->
+        <div class="w3-section" style="max-width: 400px; margin: 15px auto 0 auto;">
+            <!-- Uses w3-input and w3-border classes; handles Enter key press dynamically -->
+            <input class="w3-input w3-border w3-round" type="text" id="searchInput" placeholder="Type keyword and press Enter to search..." onkeypress="checkEnter(event)">
+        </div>
+        <!-- Container for the error message if text is not found -->
+        <div id="searchMessage" class="w3-text-red w3-center" style="margin-top: 5px; font-weight: bold; font-size: 14px;"></div>
+        <!-- =================================================================================== -->
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index(2).html">Biodata</a></li>
+            <li><a href="index(3).html">Experience</a></li>
+            <li><a href="index(4).html">Education</a></li>
+            <li><a href="index(5).html">Family</a></li>
+            <li><a href="index(6).html">Gallery</a></li>
+            <li><a href="index(7).html">Contact</a></li>
+        </ul>
+    </nav>
+
+<!-- Added 'searchableContent' ID here to allow JavaScript to crawl elements inside this container -->
+<div class="main-content" id="searchableContent">
+    <div class="profile-header">
+
+    <img src="images/redshirt.jpg"
+         alt="Mohamad Haziq Farhan"
+         class="profile-img">
+
+    <div class="profile-text">
+
+        <h2>Mohamad Haziq Farhan Bin Mohamad Hafiz Siva</h2>
+
+        <p>
+        <span style="color:rgb(43, 181, 255); text-decoration:underline;">
+        Diploma of Information Management
+    </span>
+        </p>
+
+        <p>
+                <span style="color:rgb(195, 111, 255); text-decoration:underline;">
+        Universiti Teknologi MARA (UiTM) Johor
+    </span>
+        </p>
+
+        <p>
+        Passionate in the field of
+    <span style="color:green; text-decoration:underline;">
+        Records Management, Information Organization and Digital Technology.
+    </span>
+</p>
+
+    </div>
+
+</div>
+
+<br>
+
+<h2> <b>Personal Biodata</b> </h2>
+
+<div style="overflow:auto; margin-top:20px;">
+
+    <!-- TABLE (LEFT) -->
+    <div style="float:left; width:60%;">
+
+        <table class="w3-table w3-striped w3-bordered w3-hoverable w3-card-4">
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+
+            <tr>
+                <td><b>Full Name</b></td>
+                <td>Mohamad Haziq Farhan Bin Mohamad Hafiz Siva</td>
+            </tr>
+
+            <tr>
+                <td><b>Age</b></td>
+                <td>21 Years Old</td>
+            </tr>
+
+            <tr>
+                <td><b>Date of Birth</b></td>
+                <td>19 November</td>
+            </tr>
+
+            <tr>
+                <td><b>Gender</b></td>
+                <td>Male</td>
+            </tr>
+
+            <tr>
+                <td><b>Nationality</b></td>
+                <td>Malaysian</td>
+            </tr>
+
+            <tr>
+                <td><b>Address</b></td>
+                <td>Putrajaya</td>
+            </tr>
+
+            <tr>
+                <td><b>Institution</b></td>
+                <td><abbr title="Universiti Teknologi MARA">UiTM</abbr> Segamat branch</td>
+            </tr>
+
+            <tr>
+                <td><b>Programme</b></td>
+                <td>Diploma of Infomation Management</td>
+            </tr>
+
+            <tr>
+                <td><b>Current Semester</b></td>
+                <td>Semester 5</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- IMAGE (RIGHT) -->
+    <div style="float:left; width:35%; text-align:center;">
+
+        <img src="images/selfiemirror.jpg"
+             alt="Profile Image"
+             style="width:100%; max-width:260px; height:auto; border-radius:10px; border:1px solid #ccc;">
+
+    </div>
+
+</div>
+
+<div style="clear:both;"></div>
+
+
+<h3 style="text-align:center; margin-top:40px;"> <b>Additional Information</b> </h3>
+
+<div style="overflow:auto; margin-top:20px;">
+
+    <!-- TABLE 1: SKILLS -->
+    <div style="float:left; width:48%; margin-right:4%;">
+
+        <table class="w3-table w3-striped w3-bordered w3-hoverable w3-card-4">
+            <tr>
+                <th>Skills</th>
+            </tr>
+            <tr>
+                <td>
+                    Records Management<br>
+                    Document Filing<br>
+                    Microsoft Word<br>
+                    Microsoft Excel<br>
+                    HTML & CSS
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- TABLE 2: LANGUAGES -->
+    <div style="float:left; width:48%;">
+
+        <table class="w3-table w3-striped w3-bordered w3-hoverable w3-card-4">
+            <tr>
+                <th>Languages</th>
+            </tr>
+            <tr>
+                <td>
+                    Bahasa Melayu (Native) <br>
+                    English (Good)
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+<!-- CLEAR -->
+<div style="clear:both;"></div>
+
+
+<div style="overflow:auto; margin-top:20px;">
+
+    <!-- TABLE 3: INTERESTS -->
+    <div style="float:left; width:48%; margin-right:4%;">
+
+        <table class="w3-table w3-striped w3-bordered w3-hoverable w3-card-4">
+            <tr>
+                <th>Interests</th>
+            </tr>
+            <tr>
+                <td>
+                    Listening to Music<br>
+                    Watching Movies<br>
+                    Travelling<br>
+                    Technology
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- TABLE 4: CAREER GOAL -->
+    <div style="float:left; width:48%;">
+
+        <table class="w3-table w3-striped w3-bordered w3-hoverable w3-card-4">
+            <tr>
+                <th>Career Goal</th>
+            </tr>
+            <tr>
+                <td>
+                    To become a competent information professional<br>
+                    who contributes to effective records and information management. 
+                    <u> Also, to become successful person in this world and hereafter. </u>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+<div style="clear:both;"></div>
+
+</div>
+
+
+     <footer style="text-align:center;">
+    <p>&copy; 2026 Personal Resume Website. Developed by <mark>MOHAMAD HAZIQ FARHAN BIN MOHAMAD HAFIZ SIVA (2024936233)</mark> by 16 June 2026. Prepared for IMD318 Assignment.</p>
+    <p>Last Updated: 18 June 2026</p>
+     </footer>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock-widget').innerText = "Current Time: " + now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // ==================== JAVASCRIPT SEARCH ENGINE LOGIC ====================
+        
+        // 1. Listens for the 'Enter' key strike on the keyboard
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                executeSearch();
+            }
+        }
+
+        // 2. Processes text query and dynamically highlights matches
+        function executeSearch() {
+            const keyword = document.getElementById('searchInput').value.toLowerCase();
+            const errorMessage = document.getElementById('searchMessage');
+            
+            // Targets specific text nodes and table cells inside your profile content
+            const textElements = document.querySelectorAll('#searchableContent td, #searchableContent h2, #searchableContent h3, #searchableContent p, #searchableContent span');
+            
+            let found = false;
+            errorMessage.innerText = ""; // Resets previous error text
+
+            // Clears previous yellow marks (<mark>) before starting a fresh run
+            textElements.forEach(element => {
+                if(element.hasAttribute('data-original')) {
+                    element.innerHTML = element.getAttribute('data-original');
+                }
+            });
+
+            if (keyword.trim() === "") {
+                errorMessage.innerText = "Please enter a word to search!";
+                return;
+            }
+
+            // Scans each elements text node for matches
+            textElements.forEach(element => {
+                const originalText = element.innerText;
+                const lowerText = originalText.toLowerCase();
+
+                // Caches the clean HTML markup layout to avoid data stripping on refresh
+                if(!element.hasAttribute('data-original')) {
+                    element.setAttribute('data-original', element.innerHTML);
+                }
+
+                if (lowerText.includes(keyword)) {
+                    found = true;
+                    
+                    // Wraps matched keywords with standard yellow text markup
+                    const regex = new RegExp(`(${keyword})`, 'gi');
+                    element.innerHTML = element.innerHTML.replace(regex, `<mark style="background-color: yellow; color: black;">$1</mark>`);
+                }
+            });
+
+            // Alerts user if query string hits zero matches
+            if (!found) {
+                errorMessage.innerText = `Word "${keyword}" not found on this page!`;
+            }
+        }
+    </script>
+
+</body>
+</html>

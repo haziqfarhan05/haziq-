@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haziq</title>
+
+    <link rel="icon" type="image/png" sizes="512x512"
+          href="images/manchesterunited.png">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | IMD318 Resume Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1> <b>Educational Background</b> </h1>
+        <p class="text-italic">Academic history and intellectual milestones</p>
+        <div id="clock-widget">Loading Clock...</div>
+
+        <div class="w3-section" style="max-width: 400px; margin: 15px auto 0 auto;">
+            <input class="w3-input w3-border w3-round" type="text" id="searchInput" placeholder="Type keyword and press Enter to search..." onkeypress="checkEnter(event)">
+        </div>
+        <div id="searchMessage" class="w3-text-red w3-center" style="margin-top: 5px; font-weight: bold; font-size: 14px;"></div>
+        </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index(2).html">Biodata</a></li>
+            <li><a href="index(3).html">Experience</a></li>
+            <li><a href="index(4).html">Education</a></li>
+            <li><a href="index(5).html">Family</a></li>
+            <li><a href="index(6).html">Gallery</a></li>
+            <li><a href="index(7).html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="searchableContent">
+        <section class="container">
+
+
+<h2 style="text-align:center;"> <b>Educational Background</b> </h2>
+
+<table style="margin-top:20px;">
+
+    <tr>
+        <th>No.</th>
+        <th>Logo</th>
+        <th>Institution</th>
+        <th>Qualification</th>
+        <th>Duration</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+
+        
+        <td style="text-align:center;">
+             <a href="https://johor.uitm.edu.my/"><img src="images/uitmsegamat.png" alt="HTML tutorial" style="width:120px; height:120px; object-fit:contain;"></a>
+                  <p>Click image for information.</p>
+        </td>
+
+        <td>Universiti Teknologi MARA (UiTM)</td>
+        <td>Diploma in Information Management (IM110)</td>
+        <td>2024 - Present</td>
+
+    </tr>
+
+
+    <tr>
+        <td>2</td>
+
+        <td style="text-align:center;">
+             <a href="https://terengganu.uitm.edu.my/index.php/ms/"><img src="images/uitmdungun.png" style="width:160px; height:160px; object-fit:contain;"></a>
+                  <p>Click image for information.</p>
+        </td>
+
+        <td>Universiti Teknologi MARA (UiTM)</td>
+        <td>Pre-diploma in Commerce</td>
+        <td>2023 - 2024</td>
+
+    </tr>
+
+    <tr>
+        <td>3</td>
+
+        <td style="text-align:center;">
+             <a href="https://ms.wikipedia.org/wiki/Sekolah_Menengah_Kebangsaan_Putrajaya_Presint_11_(1)"><img src="images/smkpp11(1).jpg" style="width:120px; height:120px; object-fit:contain;"></a>
+                  <p>Click image for information.</p>
+        </td>
+
+        <td>SMK Putrajaya Presint 11(1)</td>
+        <td>Sijil Pelajaran Malaysia (SPM)</td>
+        <td>2018 - 2022</td>
+
+    </tr>
+
+        <tr>
+        <td>4</td>
+
+        
+        <td style="text-align:center;">
+             <a href="https://skppninetwo.com/"><img src="images/skpp9(2).jpg" alt="HTML tutorial" style="width:120px; height:120px; object-fit:contain;"></a>
+                  <p>Click image for information.</p>
+        </td>
+
+        <td>SK Putrajaya Presint 9(2)</td>
+        <td>Ujian Peperiksaan Sekolah Rendah (UPSR)</td>
+        <td>2012 - 2017</td>
+
+    </tr>
+
+</table>
+
+
+</section>
+
+
+        <section class="container">
+
+<h2 style="text-align:center;"> <b>Relevant Courses</b> </h2>
+
+<table style="margin-top:20px;">
+
+    <tr>
+        <th>Course Code</th>
+        <th>Course Name</th>
+        <th>Year Taken</th>
+    </tr>
+
+    <tr>
+        <td>IMD318</td>
+        <td>Introduction to Web Content Management and Design</td>
+        <td>2026</td>
+    </tr>
+
+    <tr>
+        <td>IMD261</td>
+        <td>Database for Information Professionals</td>
+        <td>2025</td>
+    </tr>
+
+    <tr>
+        <td>IMD238</td>
+        <td>Programming for Information Professionals</td>
+        <td>2025</td>
+    </tr>
+
+</table>
+
+</section>
+</main>
+
+
+     <footer style="text-align:center;">
+    <p>&copy; 2026 Personal Resume Website. Developed by <mark>MOHAMAD HAZIQ FARHAN BIN MOHAMAD HAFIZ SIVA (2024936233)</mark> by 16 June 2026. Prepared for IMD318 Assignment.</p>
+    <p>Last Updated: 18 June 2026</p>
+     </footer>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock-widget').innerText = "Current Time: " + now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // ==================== JAVASCRIPT SEARCH ENGINE LOGIC ====================
+        
+        // 1. Catches the 'Enter' key stroke inside the input box
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                executeSearch();
+            }
+        }
+
+        // 2. Processes text query and dynamically highlights matches
+        function executeSearch() {
+            const keyword = document.getElementById('searchInput').value.toLowerCase();
+            const errorMessage = document.getElementById('searchMessage');
+            
+            // Targets table cells, headings, and description paragraphs within the main section
+            const textElements = document.querySelectorAll('#searchableContent td, #searchableContent h2, #searchableContent p');
+            
+            let found = false;
+            errorMessage.innerText = ""; // Resets previous error text
+
+            // Clears previous yellow marks (<mark>) before running a fresh search cycle
+            textElements.forEach(element => {
+                if(element.hasAttribute('data-original')) {
+                    element.innerHTML = element.getAttribute('data-original');
+                }
+            });
+
+            if (keyword.trim() === "") {
+                errorMessage.innerText = "Please enter a word to search!";
+                return;
+            }
+
+            // Scans each container element for text criteria matches
+            textElements.forEach(element => {
+                const originalText = element.innerText;
+                const lowerText = originalText.toLowerCase();
+
+                // Caches baseline HTML structure layout to prevent stripping hyperlinks or formatting tags
+                if(!element.hasAttribute('data-original')) {
+                    element.setAttribute('data-original', element.innerHTML);
+                }
+
+                if (lowerText.includes(keyword)) {
+                    found = true;
+                    
+                    // Wraps discovered match with inline yellow styled marker text
+                    const regex = new RegExp(`(${keyword})`, 'gi');
+                    element.innerHTML = element.innerHTML.replace(regex, `<mark style="background-color: yellow; color: black;">$1</mark>`);
+                }
+            });
+
+            // Prompts user error if matching conditions return zero results
+            if (!found) {
+                errorMessage.innerText = `Word "${keyword}" not found on this page!`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haziq</title>
+
+    <link rel="icon" type="image/png" sizes="512x512"
+          href="images/manchesterunited.png">
+
+    <!-- Fetching W3.CSS from W3Schools to style the search bar -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | IMD318 Resume Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <header>
+        <h1> <b>Welcome to Haziq's Personal Website</b> </h1>
+        <p class="text-italic">
+            Introduction to Web Content Management & Design (IMD318)
+        </p>
+        <div id="clock-widget">Loading Clock...</div>
+
+        <!-- ==================== SEARCH ENGINE ELEMENTS (W3SCHOOLS FORMAT) ==================== -->
+        <div class="w3-section" style="max-width: 400px; margin: 15px auto 0 auto;">
+            <!-- Uses w3-input and w3-border classes; handles Enter key press dynamically -->
+            <input class="w3-input w3-border w3-round" type="text" id="searchInput" placeholder="Type keyword and press Enter to search..." onkeypress="checkEnter(event)">
+        </div>
+        <!-- Container for the error message if text is not found -->
+        <div id="searchMessage" class="w3-text-red w3-center" style="margin-top: 5px; font-weight: bold; font-size: 14px;"></div>
+        <!-- =================================================================================== -->
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index(1).html" class="active">Home</a></li>
+            <li><a href="index(2).html">Biodata</a></li>
+            <li><a href="index(3).html">Experience</a></li>
+            <li><a href="index(4).html">Education</a></li>
+            <li><a href="index(5).html">Family</a></li>
+            <li><a href="index(6).html">Gallery</a></li>
+            <li><a href="index(7).html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- The 'searchableContent' ID allows JavaScript to parse all texts inside this section -->
+        <section class="container" id="searchableContent">
+
+            <div style="overflow:auto; margin-top:20px;">
+
+                <!-- IMAGE -->
+                <div style="float:left; width:35%; text-align:center;">
+
+                    <img src="images/gunung.jpg"
+                         alt="Profile Picture"
+                         style="width:250px; height:auto; border-radius:10px;">
+
+                </div>
+
+                <!-- TEXT -->
+                <div style="float:left; width:60%;">
+
+                    <h2>Hello, I am Haziq, a Future Information Management Professional</h2>
+
+                    <hr style="width:60px; margin-left:0;">
+
+                    <p>
+                        <details>
+                            Welcome to Haziq's individual project website developed
+                        exclusively for <b>IMD318</b>.
+                          <summary>Click to view more information</summary>
+                          <p>This website contains information about my background, academic milestones, work history, experience, family, and personal gallery. </p>
+                        </details>
+
+                 
+                    <h3> My Personal Motto</h3>
+
+            <p>
+                <details>
+                          <summary>Click to view more information</summary>
+                          <p> <blockquote>
+                             "To achieve success in both this life and the hereafter.
+                              Also, to <strong>make my mama happy</strong>".
+                              </blockquote> </p>
+                        </details>
+            </p>
+
+                    <h3> Personal Philosophy</h3>
+                    <details>
+                          <summary>Click to view more information</summary>
+                          <p><pre>To make mama happy. To make abah happy. To be rich.</pre> </p>
+                        </details>
+
+                </div>
+
+            </div>
+
+            <div style="clear:both;"></div>
+
+        </section>
+
+
+    </main>
+
+    
+     <footer style="text-align:center;">
+    <p>&copy; 2026 Personal Resume Website. Developed by <mark>MOHAMAD HAZIQ FARHAN BIN MOHAMAD HAFIZ SIVA (2024936233)</mark> by 16 June 2026. Prepared for IMD318 Assignment.</p>
+    <p>Last Updated: 18 June 2026</p>
+     </footer>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock-widget').innerText =
+                "Current Time: " + now.toLocaleTimeString();
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // ==================== JAVASCRIPT SEARCH ENGINE LOGIC ====================
+        
+        // 1. Listens for the 'Enter' key strike on the keyboard
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                executeSearch();
+            }
+        }
+
+        // 2. Processes text query and dynamically highlights results
+        function executeSearch() {
+            const keyword = document.getElementById('searchInput').value.toLowerCase();
+            const errorMessage = document.getElementById('searchMessage');
+            
+            // Targets specific text nodes within the main searchable content block
+            const textElements = document.querySelectorAll('#searchableContent h2, #searchableContent h3, #searchableContent p, #searchableContent b, #searchableContent strong');
+            
+            let found = false;
+            errorMessage.innerText = ""; // Resets previous error notices
+
+            // Clears previous yellow marks (<mark>) before starting a fresh search
+            textElements.forEach(element => {
+                if(element.hasAttribute('data-original')) {
+                    element.innerHTML = element.getAttribute('data-original');
+                }
+            });
+
+            if (keyword.trim() === "") {
+                errorMessage.innerText = "Please enter a word to search!";
+                return;
+            }
+
+            // Scans each text node for matching strings
+            textElements.forEach(element => {
+                const originalText = element.innerText;
+                const lowerText = originalText.toLowerCase();
+
+                // Caches the pristine HTML code for future reset cycles
+                if(!element.hasAttribute('data-original')) {
+                    element.setAttribute('data-original', element.innerHTML);
+                }
+
+                if (lowerText.includes(keyword)) {
+                    found = true;
+                    
+                    // Automatically forces open <details> tags if matching hits hide inside
+                    const parentDetails = element.closest('details');
+                    if (parentDetails) {
+                        parentDetails.open = true;
+                    }
+
+                    // Wraps matched keywords with standard yellow text markup 
+                    const regex = new RegExp(`(${keyword})`, 'gi');
+                    element.innerHTML = element.innerHTML.replace(regex, `<mark style="background-color: yellow; color: black;">$1</mark>`);
+                }
+            });
+
+            // Alerts user if query string hits zero matches
+            if (!found) {
+                errorMessage.innerText = `Word "${keyword}" not found on this page!`;
+            }
+        }
+    </script>
+
+</body>
+</html>

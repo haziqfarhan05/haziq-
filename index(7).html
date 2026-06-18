@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haziq</title>
+
+    <link rel="icon" type="image/png" sizes="512x512"
+          href="C:\Users\user\Downloads\Manchester-United-logo.png">
+
+    <!-- Fetching W3.CSS from W3Schools to style the search elements -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | IMD318 Resume Website</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: auto;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1> <b>Contact Me</b> </h1>
+    <p class="text-italic">Feel free to get in touch</p>
+    <div id="clock-widget">Loading Clock...</div>
+
+    <!-- ==================== SEARCH ENGINE ELEMENTS (W3SCHOOLS FORMAT) ==================== -->
+    <div class="w3-section" style="max-width: 400px; margin: 15px auto 0 auto;">
+        <!-- Uses w3-input and w3-border classes; handles Enter key press dynamically -->
+        <input class="w3-input w3-border w3-round" type="text" id="searchInput" placeholder="Type keyword and press Enter to search..." onkeypress="checkEnter(event)">
+    </div>
+    <!-- Container for the error message if text is not found -->
+    <div id="searchMessage" class="w3-text-red w3-center" style="margin-top: 5px; font-weight: bold; font-size: 14px;"></div>
+    <!-- =================================================================================== -->
+</header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index(2).html">Biodata</a></li>
+            <li><a href="index(3).html">Experience</a></li>
+            <li><a href="index(4).html">Education</a></li>
+            <li><a href="index(5).html">Family</a></li>
+            <li><a href="index(6).html">Gallery</a></li>
+            <li><a href="index(7).html">Contact</a></li>
+        </ul>
+    </nav>
+
+<!-- Added 'searchableContent' ID here to allow JavaScript to parse specific informational elements inside your main container -->
+<main id="searchableContent">
+
+<hr>
+
+<div style="overflow:auto; margin-top:20px;">
+
+    <!-- LEFT SIDE -->
+    <div id="details" style="float:left; width:45%; padding-right:20px;">
+
+        <h2> <b>Contact Details</b> </h2>
+
+        <p>Feel free to reach me through the platforms below:</p>
+
+        <div style="border:1px solid #ccc; padding:15px; border-radius:10px; background-color:#f9f9f9;">
+
+            <p style="margin:10px 0;">
+                <b>Email</b><br>
+                @2024936233@student.uitm.edu.my
+            </p>
+
+            <hr>
+
+            <p style="margin:10px 0;">
+                <b>Instagram</b><br>
+                <a href="https://www.instagram.com/hziqfrhn_?igsh=MWY5ajJrMWVhaG5saw%3D%3D&utm_source=qr" target="_blank">
+                    @myinsta
+                </a>
+            </p>
+
+            <hr>
+
+            <p style="margin:10px 0;">
+                <b>Snapchat</b><br>
+                <a href="https://snapchat.com/t/J8La9631" target="_blank">
+                    @mysnap
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div id="form" style="float:left; width:50%;">
+
+        <h2> <b>Contact Form</b> </h2>
+
+        <p>
+            If you have any inquiries, please fill in the form below.
+            I will respond as soon as possible. :)
+        </p>
+
+        <form action="#" method="post">
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="6" required></textarea><br><br>
+
+            <input type="submit" value="Send Message">
+
+        </form>
+
+    </div>
+
+</div>
+
+<div style="clear:both;"></div>
+
+<hr>
+
+<!--  BOTTOM INTERNAL SECTION -->
+<section id="bottom" class="container">
+
+
+<section class="container">
+
+<h3> <b>Quick Navigation</b> </h3>
+
+<ul>
+    <li><a href="biodata.html">Biodata</a></li>
+    <li><a href="https://johor.uitm.edu.my/">UiTM Segamat</a></li>
+    <li><a href="https://ms.wikipedia.org/wiki/Sekolah_Menengah_Kebangsaan_Putrajaya_Presint_11_(1)">SMKPP 11(1)</a></li>
+</ul>
+
+
+</section>
+
+<hr>
+
+</section>
+
+</main>
+
+<hr>
+
+
+     <footer style="text-align:center;">
+    <p>&copy; 2026 Personal Resume Website. Developed by <mark>MOHAMAD HAZIQ FARHAN BIN MOHAMAD HAFIZ SIVA (2024936233)</mark> by 16 June 2026. Prepared for IMD318 Assignment.</p>
+    <p>Last Updated: 18 June 2026</p>
+     </footer>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('clock-widget').innerText =
+            "Current Time: " + now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // ==================== JAVASCRIPT SEARCH ENGINE LOGIC ====================
+    
+    // 1. Catches the 'Enter' key stroke inside the input box
+    function checkEnter(event) {
+        if (event.key === "Enter") {
+            executeSearch();
+        }
+    }
+
+    // 2. Processes text query and dynamically highlights matches
+    function executeSearch() {
+        const keyword = document.getElementById('searchInput').value.toLowerCase();
+        const errorMessage = document.getElementById('searchMessage');
+        
+        // Excludes input fields and targets headers, descriptive labels, and links to keep your forms fully operational
+        const textElements = document.querySelectorAll('#searchableContent h2, #searchableContent h3, #searchableContent p, #searchableContent li');
+        
+        let found = false;
+        errorMessage.innerText = ""; // Resets previous warnings
+
+        // Clears old yellow highlights (<mark>) before creating a fresh match stream
+        textElements.forEach(element => {
+            if(element.hasAttribute('data-original')) {
+                element.innerHTML = element.getAttribute('data-original');
+            }
+        });
+
+        if (keyword.trim() === "") {
+            errorMessage.innerText = "Please enter a word to search!";
+            return;
+        }
+
+        // Loops across the valid text arrays to parse keyword locations
+        textElements.forEach(element => {
+            const originalText = element.innerText;
+            const lowerText = originalText.toLowerCase();
+
+            // Caches original HTML to preserve link structures and form elements perfectly
+            if(!element.hasAttribute('data-original')) {
+                element.setAttribute('data-original', element.innerHTML);
+            }
+
+            if (lowerText.includes(keyword)) {
+                found = true;
+                
+                // Emplaces yellow style background highlighting to matching strings
+                const regex = new RegExp(`(${keyword})`, 'gi');
+                element.innerHTML = element.innerHTML.replace(regex, `<mark style="background-color: yellow; color: black;">$1</mark>`);
+            }
+        });
+
+        // Displays notice trace lines if no elements match the typed string
+        if (!found) {
+            errorMessage.innerText = `Word "${keyword}" not found on this page!`;
+        }
+    }
+</script>
+
+</body>
+</html>

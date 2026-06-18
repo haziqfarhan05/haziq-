@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haziq</title>
+
+    <link rel="icon" type="image/png" sizes="512x512"
+          href="images/manchesterunited.png">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | IMD318 Resume Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1> <b>Family</b> </h1>
+    <p>My family background and information</p>
+    <div id="clock-widget">Loading Clock...</div>
+
+    <div class="w3-section" style="max-width: 400px; margin: 15px auto 0 auto;">
+        <input class="w3-input w3-border w3-round" type="text" id="searchInput" placeholder="Type keyword and press Enter to search..." onkeypress="checkEnter(event)">
+    </div>
+    <div id="searchMessage" class="w3-text-red w3-center" style="margin-top: 5px; font-weight: bold; font-size: 14px;"></div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index(2).html">Biodata</a></li>
+            <li><a href="index(3).html">Experience</a></li>
+            <li><a href="index(4).html">Education</a></li>
+            <li><a href="index(5).html">Family</a></li>
+            <li><a href="index(6).html">Gallery</a></li>
+            <li><a href="index(7).html">Contact</a></li>
+        </ul>
+    </nav>
+
+<hr>
+
+<main id="searchableContent">
+
+<h3> <b>Quick Navigation</b> </h3>
+<p>
+    <a href="#intro">My Family</a> |
+    <a href="#picture">Family Picture</a> |
+    <a href="#appreciation">Triple L for Family</a>
+</p>
+
+<hr>
+
+<section id="intro">
+
+<h2> <b>My Family</b> </h2>
+
+<p>
+My family is an important source of support and motivation in my life.
+They have always encouraged me in my academic journey and personal development.
+I am grateful for their guidance, care and continuous support.
+</p>
+
+</section>
+
+<hr>
+
+<section id="picture">
+
+<h3> <b>Family Picture</b> </h3>
+
+<div>
+    <img src="images/family.png" alt="My Family Photo" width="500" style="float:left; margin-right:15px;">
+
+    <p> <i>
+    Through every challenge, you stood by my side,<br>
+    Giving me strength, hope, and pride.<br>
+    Your love has guided me through every day,<br>
+    Lighting my path and showing the way.<br>
+    In moments of doubt, you believed in me,<br>
+    Encouraging me to become the best I can be.<br>
+    Every achievement I earn is because of your care,<br>
+    Built upon the sacrifices you willingly share.<br>
+    No words can fully express my gratitude and love,<br>
+    For you are my greatest blessing from above. </i>
+    </p>
+
+    <div style="clear:both;"></div>
+</div>
+
+</section>
+
+<hr>
+
+<section id="appreciation">
+
+<h2> <b>Triple "L" for Family</b> </h2>
+
+<p>
+<ol>
+   <li>Love</li>
+   <li>Life</li>
+   <li>Lungs</li>
+</ol>
+</p>
+
+</section>
+
+</main>
+
+<hr>
+
+     <footer style="text-align:center;">
+    <p>&copy; 2026 Personal Resume Website. Developed by <mark>MOHAMAD HAZIQ FARHAN BIN MOHAMAD HAFIZ SIVA (2024936233)</mark> by 16 June 2026. Prepared for IMD318 Assignment.</p>
+    <p>Last Updated: 18 June 2026</p>
+     </footer>
+     
+<script>
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('clock-widget').innerText =
+            "Current Time: " + now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // ==================== JAVASCRIPT SEARCH ENGINE LOGIC ====================
+    
+    // 1. Catches the 'Enter' key stroke inside the input box
+    function checkEnter(event) {
+        if (event.key === "Enter") {
+            executeSearch();
+        }
+    }
+
+    // 2. Processes text query and dynamically highlights matches
+    function executeSearch() {
+        const keyword = document.getElementById('searchInput').value.toLowerCase();
+        const errorMessage = document.getElementById('searchMessage');
+        
+        // Targets text targets including lists, items, lines, headings, and description blocks
+        const textElements = document.querySelectorAll('#searchableContent h2, #searchableContent h3, #searchableContent p, #searchableContent li');
+        
+        let found = false;
+        errorMessage.innerText = ""; // Resets previous execution logs
+
+        // Clears old yellow markers (<mark>) before executing a fresh run
+        textElements.forEach(element => {
+            if(element.hasAttribute('data-original')) {
+                element.innerHTML = element.getAttribute('data-original');
+            }
+        });
+
+        if (keyword.trim() === "") {
+            errorMessage.innerText = "Please enter a word to search!";
+            return;
+        }
+
+        // Processes each clean element block looking for characters matching user keyword
+        textElements.forEach(element => {
+            const originalText = element.innerText;
+            const lowerText = originalText.toLowerCase();
+
+            // Caches original format code to prevent losing navigation links during continuous usage
+            if(!element.hasAttribute('data-original')) {
+                element.setAttribute('data-original', element.innerHTML);
+            }
+
+            if (lowerText.includes(keyword)) {
+                found = true;
+                
+                // Implements yellow marking wrapper around discovered keyword instances
+                const regex = new RegExp(`(${keyword})`, 'gi');
+                element.innerHTML = element.innerHTML.replace(regex, `<mark style="background-color: yellow; color: black;">$1</mark>`);
+            }
+        });
+
+        // Presents explicit notice text if final search yielded zero hits
+        if (!found) {
+            errorMessage.innerText = `Word "${keyword}" not found on this page!`;
+        }
+    }
+</script>
+
+</body>
+</html>
